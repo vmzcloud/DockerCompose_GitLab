@@ -49,7 +49,7 @@ mount -a
 ### Start the GitLab container
 Put the
 
-- docker-compose.yaml
+- docker-compose.yml
 - .env
 
 into /root/GitLab folder\
