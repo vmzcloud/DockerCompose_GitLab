@@ -55,5 +55,12 @@ Put the
 into /root/GitLab folder\
 Execute the following command
 <pre>
+cd /root/GitLab
 docker compose up -d
+</pre>
+
+## Find the initial root password
+* Gitlab Version 15.2, you need to find the root password yourself at the first time setup.
+<pre>
+docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
 </pre>
