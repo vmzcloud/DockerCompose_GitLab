@@ -1,0 +1,28 @@
+version: '3.6'
+services:
+  web:
+    environment:
+      TZ: 'Asia/Hong_Kong'
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url '${EXTERNAL_URL}'
+        gitlab_rails['time_zone'] = 'Asia/Hong_Kong'
+        gitlab_rails['env'] = {
+          "http_proxy" => "http://proxy_URL:8080",
+          "https_proxy" => "http://proxy_URL:8080",
+          "no_proxy" => "localhost,127.0.0.1,192.168.5.0/24"
+        }
+    image: 'gitlab/gitlab-ee:${GITLAB_VERSION}'
+    restart: always
+    ports:
+      - '80:80'
+      - '443:443'
+      - '22:22'
+    volumes:
+      - '${GITLAB_HOME}/config:/etc/gitlab'
+      - '${GITLAB_HOME}/logs:/var/log/gitlab'
+      - '${GITLAB_HOME}/data:/var/opt/gitlab'
+    logging:
+      driver: "json-file"
+      options:
+        max-file: 10
+        max-size: 10m
