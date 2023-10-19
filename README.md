@@ -2,6 +2,8 @@
 
 # GitLab 
 
+[Reference](https://docs.gitlab.com/ee/install/docker.html)
+
 ## Preparation
 
 ### Change the docker host sshd port first
