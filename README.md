@@ -2,6 +2,8 @@
 
 # GitLab 
 
+![alt text](gitlab-image.png "GitLab")
+
 [Reference](https://docs.gitlab.com/ee/install/docker.html)
 
 ## Preparation
